@@ -127,10 +127,14 @@ psych::corPlot(sapply(dat, as.numeric)) # mapa de calor correlaciones
 # Ejercicios
 #~~~~~
 
-# 1) Realiza una serie de ejercicios con la base de datos "Gapminder.xlsx":
-#     a) ¿Cual es el último año para el que se disponen datos?
-#     b) ¿Cuantos paises estan representados en la base de datos?
-#     c) ¿Cuantos paises de Oceanía estan representados en la base de datos?
-#     d) ¿Cual es el máximo de la variable lifeExp? 
-#     e) ¿Cual es valor de la correlación entre lifeExp y gdpPercap? 
+# Importa la base de datos Gapminder.txt disponible en https://github.com/miguel-sorrel/R_UAMx y responde a las siguientes preguntas:
+#     a) ¿Qué valor debería tomar el argumento header en la función read.table(), TRUE o FALSE?
+#     b) ¿Qué valor debería tomar el argumento sep en esa misma función, \t o ,?
+#     c) ¿Cuántas filas incluye la base de datos?
+#     d) ¿Cuántas columnas incluye la base de datos?
+#     e) ¿A qué continente pertenece el país presentado en la fila 400? (escribe el nombre tal cual aparece en la base de datos)
+#     f) ¿Cuantos paises estan representados en la base de datos?
+#     g) ¿Cuantos paises de Oceanía estan representados en la base de datos?
+#     h) ¿Cual es la mediana para la variable lifeExp? 
+#     i) ¿Cual es valor de la correlación entre lifeExp y gdpPercap? 
 

@@ -56,18 +56,24 @@ mean(iris$Sepal.Area)
 # VERSION:   3.0
 #===============================================================================
 
-# 1) Realiza una serie de ejercicios con la base de datos "Gapminder.xlsx":
-library(gapminder)
-#     a) Cuál es el último año para el que se disponen datos? [sol. = 2007]
-table(gapminder$year)
-#     b) Cuantos paises estan representados en la base de datos? [sol. = 142]
-length(table(gapminder$country))
-#     c) Cuantos paises de Oceanía estan representados en la base de datos? [sol. = 2]
-table(gapminder$continent)["Oceania"]/length(table(gapminder$year))
-#     d) Cuál es el máximo de la variable lifeExp? [sol. = 82.6]
-describe(gapminder$lifeExp)
-#     e) Cuál es valor de la correlación entre lifeExp y gdpPercap? [sol. = 0.58]
-corPlot(sapply(dat, as.numeric))
+# Importa la base de datos Gapminder.txt disponible en https://github.com/miguel-sorrel/R_UAMx y responde a las siguientes preguntas:
+datos <- read.table("Gapminder.txt", header = TRUE, sep = ",", stringsAsFactors = TRUE)
+#     a) ¿Qué valor debería tomar el argumento header en la función read.table(), TRUE o FALSE? [Sol: TRUE]
+#     b) ¿Qué valor debería tomar el argumento sep en esa misma función, \t o ,? [Sol: ,]
+#     c) ¿Cuántas filas incluye la base de datos? [Sol: 1704]
+nrow(datos)
+#     d) ¿Cuántas columnas incluye la base de datos? [Sol: 6]
+ncol(datos)
+#     e) ¿A qué continente pertenece el país presentado en la fila 400? (escribe el nombre tal cual aparece en la base de datos) [Sol: Europe]
+datos[400, ]
+#     f) ¿Cuantos paises estan representados en la base de datos? [Sol: 142]
+length(table(datos$country))
+#     g) ¿Cuantos paises de Oceanía estan representados en la base de datos? [Sol: 2]
+table(datos$continent)["Oceania"]/length(table(datos$year))
+#     h) ¿Cual es el máximo para la variable lifeExp? [Sol: 82.60]
+summary(datos$lifeExp)
+#     i) ¿Cual es valor de la correlación entre lifeExp y gdpPercap? [Sol: Europe]
+psych::corPlot(sapply(datos, as.numeric))
 
 #===============================================================================
 # CURSO:   INICIACION A R PARA EL ANALISIS ESTADISTICO
